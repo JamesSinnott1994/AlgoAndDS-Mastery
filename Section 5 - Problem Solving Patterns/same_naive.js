@@ -1,3 +1,4 @@
+// Naive solution as the time complexity is O(n^2)
 function same(arr1, arr2) {
 
 	if(arr1.length !== arr2.length) {
@@ -6,6 +7,7 @@ function same(arr1, arr2) {
 
 	for (let i = 0; i < arr1.length; i++) {
 
+		// indexOf is a for-loop
 		let correctIndex = arr2.indexOf(arr1[i] ** 2);
 		if (correctIndex === -1) {
 			return false;
