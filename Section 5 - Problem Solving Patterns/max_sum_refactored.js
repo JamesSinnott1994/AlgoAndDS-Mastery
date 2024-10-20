@@ -1,4 +1,7 @@
 function maxSubarraySum(arr, num){
+
+  // Time Complexity of O(n)
+
   let maxSum = 0;
   let tempSum = 0;
   if (arr.length < num) return null;
