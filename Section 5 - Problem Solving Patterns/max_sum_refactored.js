@@ -1,4 +1,4 @@
-function maxSubarraySum(arr, num){
+function maxSubarraySumRefactored(arr, num){
 
   // Time Complexity of O(n)
 

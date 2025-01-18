@@ -1,0 +1,16 @@
+
+The "complement" of a number can be useful for solving certain problem, such as the TwoSum problem.
+
+===================
+
+Leetcode
+---------
+
+Easy
+-----
+1. TwoSum - Getting complement and put in dictionary for the solution
+9. isPalindrome - Converting integer to string is good enough (Refactored solution not doing the conversion is more complicated)
+13. Roman to Integer - Dictionary solution
+14. Longest Common Prefix - Array sort and then string checking using substring method
+15. Valid Parantheses - Hashmaps and Stacks
+21. Merge Two Sorted Lists
