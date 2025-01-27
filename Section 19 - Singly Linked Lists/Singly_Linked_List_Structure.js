@@ -94,6 +94,21 @@ class SinglyLinkedList{
         }
         return false;
     }
+
+    insert(index, val){
+        // Edge cases
+        if(index < 0 || index > this.length) return false;
+        if(index === this.length) return !!this.push(val); // !! means double negation i.e !!0 = false, !!1 = true
+        if(index === 0) return !!this.unshift(val); // !! a way of converting something to a boolean
+        
+        var newNode = new Node(val);
+        var prev = this.get(index - 1); // Gets node before the index where we are inserting
+        var temp = prev.next;
+        prev.next = newNode;
+        newNode.next = temp;
+        this.length++;
+        return true;
+    }
 }
 
 // var first = new Node("Hi")
