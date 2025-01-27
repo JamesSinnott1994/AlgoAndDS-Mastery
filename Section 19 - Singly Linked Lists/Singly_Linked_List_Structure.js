@@ -50,6 +50,15 @@ class SinglyLinkedList{
         }
         return current;
     }
+
+    shift() {
+        if (!this.head) return undefined;
+        var currentHead = this.head;
+        this.head = currentHead.next;
+        this.length--;
+        if (this.length === 0) this.tail = null;
+        return currentHead;
+    }
 }
 
 // var first = new Node("Hi")
@@ -62,7 +71,4 @@ var list = new SinglyLinkedList()
 list.push("HELLO")
 list.push("GOODBYE")
 
-console.log(list.pop());
-console.log(list.pop());
-console.log(list.pop());
-
+console.log(list.shift());
