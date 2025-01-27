@@ -77,13 +77,22 @@ class SinglyLinkedList{
     get(index) {
         if (index < 0 || index >= this.length) return null;
 
-        var count = 0;
+        var counter = 0;
         var current = this.head;
         while (counter !== index) {
             current = current.next;
             counter++;
         }
         return current;
+    }
+
+    set(index, val) {
+        var foundNode = this.get(index);
+        if (foundNode) {
+            foundNode.val = val;
+            return true;
+        }
+        return false;
     }
 }
 
@@ -99,4 +108,4 @@ list.push("GOODBYE")
 list.push("!")
 
 // console.log(list.unshift("WELL"));
-console.log(list.get(-1));
+console.log(list.set(2, "!!!!!!!"));
