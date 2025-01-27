@@ -73,6 +73,18 @@ class SinglyLinkedList{
         this.length++;
         return this; // Returns list
     }
+
+    get(index) {
+        if (index < 0 || index >= this.length) return null;
+
+        var count = 0;
+        var current = this.head;
+        while (counter !== index) {
+            current = current.next;
+            counter++;
+        }
+        return current;
+    }
 }
 
 // var first = new Node("Hi")
@@ -84,5 +96,7 @@ class SinglyLinkedList{
 var list = new SinglyLinkedList()
 list.push("HELLO")
 list.push("GOODBYE")
+list.push("!")
 
-console.log(list.unshift("WELL"));
+// console.log(list.unshift("WELL"));
+console.log(list.get(-1));
