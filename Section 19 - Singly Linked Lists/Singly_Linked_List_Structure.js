@@ -31,21 +31,24 @@ class SinglyLinkedList{
     }
 
     pop() {
-        if (this.length == 0) {
+        if (!this.head) {
             return undefined;
         }
 
         var current = this.head;
-        while (current) {
-            if (current.next == this.tail) {
-                var valueRemoved = this.tail.val;
-                current.next = null;
-                this.tail = current;
-                this.length -= 1;
-                return valueRemoved;
-            }
-            current = current.next;
+        var newTail = current;
+        while (current.next) {
+            newTail = current;
+            current = current.next
         }
+        this.tail = newTail;
+        this.tail.next = null;
+        this.length--;
+        if (this.length === 0) { // Special case
+            this.head = null;
+            this.tail = null;
+        }
+        return current;
     }
 }
 
@@ -60,5 +63,6 @@ list.push("HELLO")
 list.push("GOODBYE")
 
 console.log(list.pop());
-
+console.log(list.pop());
+console.log(list.pop());
 
