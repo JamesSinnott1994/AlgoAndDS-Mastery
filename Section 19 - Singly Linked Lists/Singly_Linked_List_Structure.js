@@ -120,6 +120,34 @@ class SinglyLinkedList{
         this.length--;
         return removed;
     }
+
+    reverse(){
+      var node = this.head;
+      this.head = this.tail;
+      this.tail = node;
+      var next;
+      var prev = null;
+
+      for(var i = 0; i < this.length; i++){
+        next = node.next; // 27
+        node.next = prev; // null
+
+        prev = node; // 13
+        node = next; // 27
+      }
+
+      return this;
+    }
+
+    print(){
+        var arr = [];
+        var current = this.head
+        while(current){
+            arr.push(current.val)
+            current = current.next
+        }
+        console.log(arr);
+    }
 }
 
 // var first = new Node("Hi")
@@ -134,4 +162,4 @@ list.push("GOODBYE")
 list.push("!")
 
 // console.log(list.unshift("WELL"));
-console.log(list.set(2, "!!!!!!!"));
+console.log(list.reverse());
