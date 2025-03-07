@@ -44,6 +44,7 @@ class PriorityQueue {
             let swap = null;
 
             // We could also compare by DateTime as well
+            // for elements of similar priority
             if(leftChildIdx < length){
                 leftChild = this.values[leftChildIdx];
                 if(leftChild.priority < element.priority) {
