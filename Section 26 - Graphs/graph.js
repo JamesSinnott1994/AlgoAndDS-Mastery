@@ -65,20 +65,20 @@ class Graph{
         return result;
     }
     breadthFirst(start){
-        const queue = [start];
+        const queue = [start]; // Takes start node
         const result = [];
         const visited = {};
         let currentVertex;
         visited[start] = true;
 
         while(queue.length){
-            currentVertex = queue.shift();
-            result.push(currentVertex);
+            currentVertex = queue.shift(); // Removes first node from the beginning
+            result.push(currentVertex); // Visit that node
            
 
             this.adjacencyList[currentVertex].forEach(neighbor => {
                 if(!visited[neighbor]){
-                    visited[neighbor] = true;
+                    visited[neighbor] = true; // Mark as visited
                     queue.push(neighbor);
                 }
             });
