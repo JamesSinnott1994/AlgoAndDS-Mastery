@@ -10,6 +10,6 @@ def fibonacci(n, memo=None):
     memo[n] = res # Store result
     return res
 
-n = 5
+n = 100
 print("*********")
 print(fibonacci(n))
